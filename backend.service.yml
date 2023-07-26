@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-wk-backend
+spec:
+  type: ClusterIP 
+  selector:
+    app: pod-wk-backend
+  ports:
+    - name: listeners
+      protocol: TCP
+      port: 9999 
+      targetPort: backend 

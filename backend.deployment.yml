@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-wk-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod-wk-backend
+  template:
+    metadata:
+      labels:
+        app: pod-wk-backend
+    spec:
+      containers:
+        - name: container-wk-backend
+          image: docker.io/library/wk-backend:v2
+          ports:
+            - name: backend 
+              containerPort: 80
+
