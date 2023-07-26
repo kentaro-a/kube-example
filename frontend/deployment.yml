@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-wk-frontend
+  name: deployment-frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: pod-wk-frontend
+      app: pod-frontend
   template:
     metadata:
       labels:
-        app: pod-wk-frontend
+        app: pod-frontend
     spec:
       containers:
-        - name: container-wk-frontend
-          image: docker.io/library/wk-frontend:v1
+        - name: container-frontend
+          image: docker.io/library/frontend:v3
           ports:
             - name: frontend 
               containerPort: 80
